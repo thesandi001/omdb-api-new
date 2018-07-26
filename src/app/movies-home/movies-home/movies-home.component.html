@@ -1,0 +1,4 @@
+
+<app-movie-search (searchResponseEvent)="receiveSearchResponse($event)"></app-movie-search>
+<app-movies *ngIf="isSearchClicked ;" [moviesResponse]="movieSearchResults"></app-movies>
+<ngx-spinner></ngx-spinner>

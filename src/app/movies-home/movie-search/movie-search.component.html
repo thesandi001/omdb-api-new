@@ -1,0 +1,23 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <div class="container">
+      <div class="input-group">
+        <input [(ngModel)]="searchWord" type="text" matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" [formControl]="movieSearchCtrl"
+          class="form-control" placeholder="Search for movies">
+        <span class="input-group-btn">
+          <button class="btn btn-search" (click)="onSearchClick(searchWord)" type="button">
+            <i class="fa fa-search fa-fw"></i> Search</button>
+        </span>
+      </div><mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredMovies | async" [value]="state.name">
+          <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
+          <span>{{ state.name }}</span> |
+          <small>Population: {{state.population}}</small>
+        </mat-option>
+      </mat-autocomplete>
+      <!--  -->
+    </div>
+  </mat-form-field>
+  <br />
+
+</form>

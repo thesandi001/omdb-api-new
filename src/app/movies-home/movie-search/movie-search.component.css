@@ -1,0 +1,29 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  html {
+    margin: 40px auto;
+  }
+  .btn-search {
+      background: #424242;
+      border-radius: 0;
+      color: #fff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #1c1c1c;
+    }
+    .btn-search:link, .btn-search:visited {
+      color: #fff;
+    }
+    .btn-search:active, .btn-search:hover {
+      background: #1c1c1c;
+      color: #fff;
+    }
+  

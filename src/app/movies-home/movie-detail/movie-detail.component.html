@@ -1,0 +1,64 @@
+
+<div class="container" *ngIf= "!isLoading">
+    <button (click)= "onBackClick()" mat-raised-button color="primary">Back</button>
+    <div *ngIf="movie">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card mt-5 mb-5">
+            <div class="card-header">
+              {{ movie.Title }}
+              <button mat-button [color]="iconColor" (click)="onLikebtnClick(movie.imdbID)">
+                  <mat-icon svgIcon="thumbs-up" >
+                  </mat-icon>
+                </button>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-5">
+                  <img [src]="movie.Poster" class="img-fluid" alt="{{ movie.title }}">
+                </div>
+                <div class="col-sm-7">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <strong>Release Date: </strong> {{ movie.Released | date:'dd-MM-yyyy' }}
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Imdb Rating: </strong> {{ movie.imdbRating }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Imdb Votes: </strong> {{ movie.imdbVotes }}
+                      </li>
+                    <li class="list-group-item">
+                      <strong>Plot: </strong> {{ movie.Plot }}
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Runtime: </strong> {{ movie.Runtime }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Boxoffice: </strong> {{ movie.BoxOffice }}
+                      </li>
+                    <li class="list-group-item">
+                      <strong>Genre: </strong>
+                      <span  class="badge badge-primary mr-2">
+                        {{ movie.Genre }}
+                      </span>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="{{ movie.Website }}" target="_blank">
+                        Movie Homepage
+                      </a>
+                      <a href="https://www.imdb.com/title/{{ movie.imdbID }}" target="_blank" class="btn btn-sm btn-info float-right">
+                        IMDB Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.card -->
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,19 @@
+<form class="example-form">
+
+  <div class="card mt-2 mb-2">
+    
+    <div class="card-header text-center">
+      {{ movie.Title}}
+      <button mat-button [color]="iconColor" (click)="onLikebtnClick(movie.imdbID)">
+        <mat-icon svgIcon="thumbs-up">
+        </mat-icon>
+      </button>
+    </div>
+
+    <div class="card-body">
+      <img class="card-img-top img-fluid" [src]="movie.Poster" alt="{{ movie.Title }} (Not Available)" style="height: 460px">
+      <p class="text-center">{{ movie.Year }}</p>
+      <a routerLink="/movies/{{ movie.imdbID }}" href="#" class="btn btn-block btn-info">Movie Details</a>
+    </div>
+  </div>
+</form>
